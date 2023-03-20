@@ -1,0 +1,35 @@
+lakilaki(david).
+lakilaki(john).
+lakilaki(jack).
+lakilaki(peter).
+lakilaki(ray).
+perempuan(amy).
+perempuan(karen).
+perempuan(susan).
+perempuan(liza).
+perempuan(mary).
+
+pasangan(david,amy).
+pasangan(jack,karen).
+pasangan(john,susan).
+
+sodara(liza,john).
+sodara(susan,ray).
+sodara(peter,mary).
+
+kakek(david,jack).
+nenek(amy,karen).
+anakP(liza,susan).
+anakL(john,ray).
+cucu(peter,mary).
+
+is_lakilaki(X) :- lakilaki(X).
+is_perempuan(Y) :- perempuan(Y).
+is_pasangan(X,Y) :- pasangan(X,Y).
+is_anakPerempuan(X,Y) :- anakP(X,Y).
+is_anakLakilaki(X,Y) :- anakL(X,Y).
+is_sodara(X,Y) :- sodara(X,Y).
+is_kakek(X1,X2) :- kakek(X2,X1).
+is_nenek(Y2,Y1) :- nenek(Y1,Y2).
+not(sah(menikah(X,Y))) :- is_sodara(X,Y).
+sah(menikah(X,Y)) :- is_pasangan(X,Y).
